@@ -1,0 +1,385 @@
+/* Compensar el espacio del navbar fijo */
+body {
+  font-family: 'Roboto', sans-serif;
+  transition: background-color 0.4s, color 0.4s;
+  padding-top: 76px; /* Ajusta este valor según la altura real de tu navbar */
+}
+
+/* Estilos del carrusel */
+header .carousel-item img {
+  object-fit: cover;
+  height: 450px;
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+}
+
+/* Modo oscuro */
+.dark-mode {
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
+}
+
+/* Navegación */
+.navbar a:hover {
+  color: #ffc107 !important;
+}
+
+/* Botón de tema */
+.theme-toggle {
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: #ffc107;
+  color: #000;
+  transform: scale(1.1);
+}
+
+/* Enlaces de productos */
+.link-producto {
+  text-decoration: none;
+  color: #212529;
+  font-weight: 500;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.link-producto:hover {
+  color: #ffc107;
+  background-color: rgba(255, 193, 7, 0.1);
+  padding-left: 8px;
+  border-radius: 5px;
+}
+
+/* Enlaces en modo oscuro */
+.dark-mode .link-producto {
+  color: #e0e0e0;
+}
+
+.dark-mode .link-producto:hover {
+  color: #ff9800;
+  background-color: rgba(255, 152, 0, 0.1);
+}
+
+/* Estilos específicos para tarjetas de noticias */
+.news-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Tarjetas en modo oscuro */
+.dark-mode .news-card {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border-color: #333;
+}
+
+.dark-mode .card {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border-color: #333;
+}
+
+.dark-mode .card-header {
+  background-color: #333 !important;
+  border-bottom-color: #555;
+  color: #e0e0e0 !important;
+}
+
+/* Filtros de noticias */
+.btn-check:checked + .btn-outline-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: #fff;
+}
+
+.dark-mode .btn-outline-primary {
+  color: #e0e0e0;
+  border-color: #6c757d;
+}
+
+.dark-mode .btn-outline-primary:hover {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: #000;
+}
+
+/* Badges en modo oscuro */
+.dark-mode .badge {
+  color: #000 !important;
+}
+
+.dark-mode .badge.bg-primary {
+  background-color: #0d6efd !important;
+  color: #fff !important;
+}
+
+.dark-mode .badge.bg-success {
+  background-color: #198754 !important;
+  color: #fff !important;
+}
+
+.dark-mode .badge.bg-warning {
+  background-color: #ffc107 !important;
+  color: #000 !important;
+}
+
+/* Items de lista en modo oscuro */
+.dark-mode .list-group-item {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border-color: #333;
+}
+
+.dark-mode .list-group-item:hover {
+  background-color: #333;
+  color: #ffc107;
+}
+
+/* Paginación en modo oscuro */
+.dark-mode .pagination .page-link {
+  background-color: #1e1e1e;
+  border-color: #333;
+  color: #e0e0e0;
+}
+
+.dark-mode .pagination .page-link:hover {
+  background-color: #333;
+  border-color: #555;
+  color: #ffc107;
+}
+
+.dark-mode .pagination .page-item.active .page-link {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: #fff;
+}
+
+.dark-mode .pagination .page-item.disabled .page-link {
+  background-color: #1e1e1e;
+  border-color: #333;
+  color: #666;
+}
+
+/* Modal en modo oscuro */
+.dark-mode .modal-content {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+.dark-mode .modal-header {
+  border-bottom-color: #555;
+}
+
+.dark-mode .modal-footer {
+  border-top-color: #555;
+}
+
+.dark-mode .modal-body {
+  color: #e0e0e0;
+}
+
+.dark-mode .btn-close {
+  filter: invert(1);
+}
+
+/* Formularios en modo oscuro */
+.dark-mode .form-control {
+  background-color: #333;
+  border-color: #555;
+  color: #e0e0e0;
+}
+
+.dark-mode .form-control:focus {
+  background-color: #333;
+  border-color: #ffc107;
+  color: #e0e0e0;
+  box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
+}
+
+.dark-mode .form-control::placeholder {
+  color: #999;
+}
+
+/* Footer */
+footer a:hover {
+  color: #ffc107;
+}
+
+/* Animaciones para filtros */
+.news-card {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.news-card.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .news-card .row {
+    flex-direction: column;
+  }
+  
+  .news-card img {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .carousel-caption {
+    padding: 10px;
+  }
+  
+  .carousel-caption h5 {
+    font-size: 1.2rem;
+  }
+  
+  .carousel-caption p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Destacar elemento activo */
+.active-filter {
+  background-color: #0d6efd !important;
+  color: #fff !important;
+}
+
+/* Efectos de hover mejorados */
+.card-body .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Estilo para texto muted en modo oscuro */
+.dark-mode .text-muted {
+  color: #999 !important;
+}
+
+/* Mejoras visuales para sidebar */
+.sticky-top {
+  top: 96px; /* Ajusta según la altura de tu navbar + margen */
+  transition: all 0.3s ease;
+}
+
+/* Sidebar responsivo con sticky mejorado - ajustado para navbar fijo */
+@media (min-width: 768px) {
+  .sidebar-sticky {
+    position: sticky;
+    top: 96px; /* 76px del navbar + 20px de margen */
+    max-height: calc(100vh - 120px); /* Altura máxima considerando el navbar */
+    overflow-y: auto; /* Scroll si el contenido es muy largo */
+    padding-bottom: 20px;
+  }
+}
+
+/* Títulos de sección del sidebar */
+.sidebar-section-title {
+  color: inherit !important;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.dark-mode .sidebar-section-title {
+  color: #e0e0e0 !important;
+}
+
+.card-header i {
+  margin-right: 8px;
+}
+
+/* Estilo para número de artículos en categorías */
+.badge.rounded-pill {
+  font-size: 0.75em;
+  padding: 0.375em 0.75em;
+}
+
+/* Hover effects para redes sociales */
+footer a i {
+  transition: transform 0.3s ease;
+}
+
+footer a:hover i {
+  transform: scale(1.2);
+}
+
+/* Separadores visuales */
+.card + .card {
+  margin-top: 1rem;
+}
+
+/* Estilo para botones de compartir */
+.btn-primary:hover {
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.dark-mode .btn-primary:hover {
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+}
+
+/* Transiciones específicas para elementos interactivos */
+.btn, .form-control, .card, .badge, .list-group-item, .page-link {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Evitar transiciones en elementos de texto */
+h1, h2, h3, h4, h5, h6, p, span, .card-header, .sidebar-section-title {
+  transition: none !important;
+}
+
+/* Ajustes adicionales para elementos que pueden verse afectados por el navbar fijo */
+#main-content {
+  padding-top: 20px; /* Espaciado adicional después del navbar */
+}
+
+/* Para enlaces de anclaje que necesitan compensar el navbar fijo */
+:target {
+  scroll-margin-top: 96px; /* Compensa el navbar al usar enlaces de anclaje */
+}
+
+/* Ajuste para el carrusel si está justo después del navbar */
+.carousel {
+  margin-top: -76px; /* Opcional: para que el carrusel esté completamente pegado al navbar */
+  padding-top: 76px;
+}

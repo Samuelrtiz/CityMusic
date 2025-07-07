@@ -1,0 +1,635 @@
+html {
+  height: 100%; /* Ensures HTML takes 100% of viewport height */
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  transition: background-color 0.4s, color 0.4s;
+  min-height: 100vh; /* Ensures body takes at least 100% of viewport height */
+  display: flex; /* Enables Flexbox for column organization */
+  flex-direction: column; /* Arranges child elements in a column */
+  margin: 0; /* Removes any default body margin */
+  padding-top: 76px; /* Adds space for the fixed navbar (navbar height + some padding) */
+}
+
+.precio-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.dark-mode .precio-container {
+  background-color: #2a2a2a !important;
+  border-left-color: var(--primary-color);
+}
+
+/* Precio principal */
+.precio-principal {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.precio-simbolo {
+  font-size: 1.2rem;
+  margin-right: 2px;
+}
+
+/* Badges de disponibilidad */
+.badge-disponible {
+  background-color: #28a745 !important;
+  color: white !important;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  animation: pulse-disponible 2s infinite;
+}
+
+.badge-agotado {
+  background-color: #dc3545 !important;
+  color: white !important;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  animation: pulse-agotado 2s infinite;
+}
+
+/* Animaciones para los badges */
+@keyframes pulse-disponible {
+  0% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(40, 167, 69, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
+}
+
+@keyframes pulse-agotado {
+  0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(220, 53, 69, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+}
+
+/* Contenedor de disponibilidad en card */
+.disponibilidad-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+}
+
+.card {
+  position: relative;
+}
+
+/* Estilos para información de disponibilidad en modal */
+.info-disponibilidad {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid;
+}
+
+.info-disponibilidad.disponible {
+  background-color: rgba(40, 167, 69, 0.1);
+  border-color: #28a745;
+  color: #155724;
+}
+
+.info-disponibilidad.agotado {
+  background-color: rgba(220, 53, 69, 0.1);
+  border-color: #dc3545;
+  color: #721c24;
+}
+
+.dark-mode .info-disponibilidad.disponible {
+  background-color: rgba(40, 167, 69, 0.2) !important;
+  color: #90ee90 !important;
+}
+
+.dark-mode .info-disponibilidad.agotado {
+  background-color: rgba(220, 53, 69, 0.2) !important;
+  color: #ffb3b3 !important;
+}
+
+/* Icono de disponibilidad */
+.icono-disponibilidad {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Precio en modal */
+.precio-modal {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-align: center;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(255, 193, 7, 0.05) 100%);
+  border-radius: 10px;
+  border: 2px solid var(--primary-color);
+}
+
+.dark-mode .precio-modal {
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.2) 0%, rgba(255, 193, 7, 0.1) 100%);
+}
+
+/* Botón de compra personalizado */
+.btn-comprar {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-comprar.disponible {
+  background-color: #28a745;
+  border-color: #28a745;
+  color: white;
+}
+
+.btn-comprar.disponible:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+.btn-comprar.agotado {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: white;
+  cursor: not-allowed;
+}
+
+.btn-comprar.agotado:hover {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Información adicional en cards */
+.info-producto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #eee;
+}
+
+.dark-mode .info-producto {
+  border-top-color: #444;
+}
+
+.precio-card {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .precio-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .precio-principal {
+    font-size: 1.3rem;
+  }
+  
+  .precio-modal {
+    font-size: 1.5rem;
+  }
+  
+  .disponibilidad-container {
+    position: static;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* --- CSS Variables --- */
+:root {
+  --primary-color: #ffc107;
+  --dark-bg: #121212;
+  --dark-card: #1e1e1e;
+  --dark-text: #e0e0e0;
+  --transition: all 0.3s ease;
+}
+
+/* --- Global Transitions --- */
+* {
+  transition: var(--transition);
+}
+
+/* --- General Dark Mode --- */
+.dark-mode {
+  background-color: var(--dark-bg) !important;
+  color: var(--dark-text) !important;
+}
+
+.dark-mode .bg-light {
+  background-color: var(--dark-bg) !important;
+}
+
+.dark-mode .text-dark {
+  color: var(--dark-text) !important;
+}
+
+/* --- Navigation & Footer Links --- */
+.navbar {
+  position: fixed !important; /* Makes navbar completely fixed */
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1030 !important; /* High z-index to stay above other content */
+}
+
+.navbar a:hover {
+  color: var(--primary-color) !important;
+}
+
+footer a:hover {
+  color: #ffc107;
+}
+
+/* --- Theme Toggle Button --- */
+.theme-toggle {
+  background: none;
+  border: 2px solid currentColor;
+  color: #ffffff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.theme-toggle:hover {
+  background: var(--primary-color);
+  color: #000;
+  transform: scale(1.1);
+}
+
+/* --- Category Items --- */
+.categoria-item {
+  transition: var(--transition);
+}
+
+.categoria-item:hover {
+  background-color: #f8f9fa;
+}
+
+.dark-mode .categoria-item:hover {
+  background-color: #333 !important;
+}
+
+/* --- Links --- */
+.link-categoria {
+  color: #000;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.link-categoria:hover {
+  color: var(--primary-color);
+}
+
+.dark-mode .link-categoria {
+  color: var(--dark-text) !important;
+}
+
+.dark-mode .link-categoria:hover {
+  color: var(--primary-color) !important;
+}
+
+/* --- Section Titles --- */
+.seccion-titulo {
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--primary-color);
+  padding-left: 10px;
+}
+
+.dark-mode .seccion-titulo {
+  color: var(--primary-color) !important;
+  border-left-color: var(--primary-color);
+}
+
+/* --- Lists --- */
+.dark-mode .list-group-item {
+  background-color: var(--dark-card) !important;
+  border-color: #333 !important;
+  color: var(--dark-text) !important;
+}
+
+.dark-mode .list-group-item:hover {
+  background-color: #333 !important;
+}
+
+/* --- Cards --- */
+.card {
+  transition: var(--transition);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.dark-mode .card {
+  background-color: var(--dark-card) !important;
+  border-color: #333 !important;
+  color: var(--dark-text) !important;
+}
+
+.dark-mode .card-body {
+  background-color: var(--dark-card) !important;
+  color: var(--dark-text) !important;
+}
+
+.dark-mode .card:hover {
+  box-shadow: 0 8px 25px rgba(255, 193, 7, 0.2);
+}
+
+/* --- Card Images --- */
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+/* --- Buttons --- */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #000;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #e0a800;
+  border-color: #e0a800;
+  color: #000;
+}
+
+/* --- Modals --- */
+.dark-mode .modal-content {
+  background-color: var(--dark-card) !important;
+  border-color: #333 !important;
+  color: var(--dark-text) !important;
+}
+
+.dark-mode .modal-header {
+  background-color: var(--primary-color) !important;
+  color: #000 !important;
+  border-color: #333 !important;
+}
+
+.dark-mode .modal-body {
+  background-color: var(--dark-card) !important;
+}
+
+.dark-mode .modal-footer {
+  background-color: var(--dark-card) !important;
+  border-color: #333 !important;
+}
+
+.dark-mode .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* --- Alerts --- */
+.dark-mode .alert-info {
+  background-color: rgba(255, 193, 7, 0.1) !important;
+  border-color: var(--primary-color) !important;
+  color: var(--dark-text) !important;
+}
+
+/* --- Privacy Content --- */
+.dark-mode .privacy-content h6 {
+  color: var(--primary-color);
+}
+
+.dark-mode .privacy-content ul li {
+  color: var(--dark-text);
+}
+
+.dark-mode .privacy-content p {
+  color: var(--dark-text);
+}
+
+/* --- Sidebar Sticky Positioning --- */
+.sidebar-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 2rem;
+  height: calc(100vh - 2rem);
+  overflow-y: auto;
+}
+
+/* --- Social Icons --- */
+.social-icons a {
+  margin: 0 10px;
+  font-size: 1.5rem;
+  transition: var(--transition);
+}
+
+.social-icons a:hover {
+  color: var(--primary-color) !important;
+}
+
+/* --- Product Links (Reusable) --- */
+.link-producto {
+  text-decoration: none;
+  color: #212529;
+  font-weight: 500;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.link-producto:hover {
+  color: #ffc107;
+  background-color: rgba(255, 193, 7, 0.1);
+  padding-left: 8px;
+  border-radius: 5px;
+}
+
+.dark-mode .link-producto {
+  color: #e0e0e0;
+}
+
+.dark-mode .link-producto:hover {
+  color: #ff9800;
+  background-color: rgba(255, 152, 0, 0.1);
+}
+
+/* --- MAIN CONTENT AREA - FIXED FOR STICKY FOOTER --- */
+.main-content {
+  flex: 1; /* Hace que el contenido principal ocupe todo el espacio disponible */
+  display: flex;
+  flex-direction: column;
+}
+
+/* El contenedor del contenido principal también debe crecer */
+.main-content .container-fluid {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- FOOTER STICKY - VERTICAL CENTERED LAYOUT --- */
+footer {
+  background-color: #212529 !important;
+  color: white !important;
+  padding: 2rem 0 !important;
+  width: 100% !important;
+  margin-top: auto !important; /* Esto empuja el footer hacia abajo */
+  text-align: center;
+  border-top: 1px solid rgba(255, 193, 7, 0.2) !important;
+  position: relative !important;
+  z-index: 1000;
+}
+
+/* Contenedor interno */
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Iconos sociales */
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Enlace de políticas */
+.privacy-link {
+  color: white !important;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.privacy-link:hover {
+  color: var(--primary-color) !important;
+}
+
+/* Copyright */
+.copyright {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 0.5rem;
+}
+
+/* Modo oscuro para footer */
+.dark-mode footer {
+  background-color: #121212 !important;
+  border-top-color: rgba(255, 193, 7, 0.3) !important;
+}
+
+/* --- Filter Links --- */
+.filter-link.active,
+.brand-filter.active,
+.availability-filter.active {
+  background-color: var(--primary-color) !important;
+  color: #000 !important;
+  font-weight: bold;
+}
+
+.dark-mode .filter-link.active,
+.dark-mode .brand-filter.active,
+.dark-mode .availability-filter.active {
+  background-color: var(--primary-color) !important;
+  color: #000 !important;
+}
+
+/* Transición suave para productos */
+[data-category] {
+  transition: opacity 0.3s ease;
+}
+
+/* Indicador de filtro activo */
+.link-categoria.active::before {
+  content: "➤ ";
+  font-weight: bold;
+}
+
+/* Estilos específicos para filtros de disponibilidad */
+.availability-filter {
+  color: #000;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.availability-filter:hover {
+  color: var(--primary-color);
+}
+
+.dark-mode .availability-filter {
+  color: var(--dark-text) !important;
+}
+
+.dark-mode .availability-filter:hover {
+  color: var(--primary-color) !important;
+}
+
+/* --- Responsive Footer Adjustments --- */
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column !important; /* En móviles vuelve a vertical */
+    gap: 1rem;
+    padding: 1.5rem 0 !important;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .social-icons,
+  .footer-links,
+  .copyright {
+    order: initial; /* Restablece el orden natural */
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

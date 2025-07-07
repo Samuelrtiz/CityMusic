@@ -1,0 +1,220 @@
+/* Variables CSS */
+:root {
+  --primary-color: #ffc107;
+  --dark-bg: #121212;
+  --dark-card: #1e1e1e;
+  --dark-text: #e0e0e0;
+  --transition: all 0.3s ease;
+}
+
+/* Transiciones globales */
+* {
+  transition: var(--transition);
+}
+
+/* Estilos base */
+body {
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+}
+
+/* Modo oscuro */
+.dark-mode {
+  background-color: var(--dark-bg) !important;
+  color: var(--dark-text) !important;
+}
+
+.dark-mode .contact-form {
+  background: var(--dark-card) !important;
+  border: 1px solid #333 !important;
+}
+
+.dark-mode .form-control, 
+.dark-mode .form-select {
+  background-color: #2a2a2a !important;
+  border-color: #444 !important;
+  color: var(--dark-text) !important;
+}
+
+.dark-mode .form-control:focus, 
+.dark-mode .form-select:focus {
+  background-color: #333 !important;
+  border-color: var(--primary-color) !important;
+}
+
+.dark-mode .contact-header h1 {
+  color: var(--primary-color) !important;
+}
+
+/* Botón de cambio de tema */
+.theme-toggle {
+  background: none;
+  border: 2px solid currentColor;
+  color: #ffffff; /* Luna siempre blanca */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.theme-toggle:hover {
+  background: var(--primary-color);
+  color: #000;
+  transform: scale(1.1);
+}
+
+/* Contenedor principal */
+.contact-container {
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+/* Formulario de contacto */
+.contact-form {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Estilos de formulario */
+.form-control, .form-select {
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
+}
+
+/* Botón de envío */
+.btn-submit {
+  background: linear-gradient(45deg, var(--primary-color), #ff9800);
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 25px;
+  font-weight: 600;
+  width: 100%;
+  color: #000;
+  transition: var(--transition);
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+}
+
+/* Badges de prioridad */
+.priority-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+.priority-alta { 
+  background-color: #dc3545; 
+  color: white; 
+}
+
+.priority-media { 
+  background-color: var(--primary-color); 
+  color: #000; 
+}
+
+.priority-baja { 
+  background-color: #28a745; 
+  color: white; 
+}
+
+/* Navegación */
+.navbar a:hover {
+  color: var(--primary-color) !important;
+}
+
+/* Sistema de notificaciones */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  min-width: 300px;
+  max-width: 500px;
+  animation: slideIn 0.3s ease;
+}
+
+/* Animaciones */
+@keyframes slideIn {
+  from { 
+    transform: translateX(100%); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateX(0); 
+    opacity: 1; 
+  }
+}
+
+@keyframes slideOut {
+  from { 
+    transform: translateX(0); 
+    opacity: 1; 
+  }
+  to { 
+    transform: translateX(100%); 
+    opacity: 0; 
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-form {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .contact-container {
+    padding: 1rem 0;
+  }
+  
+  .notification {
+    min-width: 250px;
+    max-width: 90%;
+    right: 5%;
+  }
+}
+
+/* Mejoras de accesibilidad */
+.form-control:focus,
+.form-select:focus,
+.btn-submit:focus,
+.theme-toggle:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Estados de carga */
+.btn-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-submit:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}

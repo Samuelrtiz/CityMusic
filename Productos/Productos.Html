@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- HEAD - METADATOS Y ENLACES EXTERNOS -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Catálogo de instrumentos musicales: guitarras, baterías y más."/>
+  <meta name="keywords" content="productos, guitarras, baterías, tienda"/>
+  <meta name="author" content="Tu Nombre"/>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/4/45/Guitaricon.png" type="image/png"/>
+  <title>Productos - CityMusic</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
+
+  <!-- Css -->
+   <link href="./css/EstilosProductos.css" rel="stylesheet"/>
+
+   <link rel="icon" type="image/x-icon" href="../music-notes-14134_640.ico">
+</head>
+
+<body class="bg-light text-dark">
+
+  <!-- NAVBAR - NAVEGACIÓN PRINCIPAL -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <!-- Logo/Brand -->
+      <a class="navbar-brand" href="../Index.html">🎸CityMusic</a>
+      
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <!-- Menú de navegación -->
+      <div class="collapse navbar-collapse" id="menuNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../Index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link active" href="./Productos.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="../Contactanos/Contactanos.html">Contactanos</a></li>
+          <li class="nav-item"><a class="nav-link" href="../Noticias/Noticias.html">Noticias</a></li>
+        </ul>
+        
+        <!-- Botón modo oscuro -->
+        <button class="theme-toggle ms-3" id="modoOscuroBtn" title="Cambiar tema">
+          <i class="bi bi-moon-fill"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="main-content">
+    <div class="container-fluid py-5">
+      <div class="row">
+
+        <!-- SIDEBAR - CATEGORÍAS Y FILTROS -->
+        <aside class="col-md-3">
+          <div class="sticky-top sidebar-sticky"> 
+            
+            <!-- Sección de Categorías -->
+            <h4 class="seccion-titulo">Categorías</h4>
+            <ul class="list-group mb-4">
+              <li class="list-group-item categoria-item">
+                <a href="#" class="link-categoria filter-link" data-filter="todos">🎵 Todos los productos</a>
+              </li>
+              <li class="list-group-item categoria-item">
+                <a href="#" class="link-categoria filter-link" data-filter="guitarras">🎸 Guitarras</a>
+              </li>
+              <li class="list-group-item categoria-item">
+                <a href="#" class="link-categoria filter-link" data-filter="baterias">🥁 Baterías</a>
+              </li>
+            </ul>
+
+            <!-- Sección de Marcas -->
+            <h4 class="seccion-titulo">Marcas Disponibles</h4>
+            <ul class="list-group mb-4">
+              <li class="list-group-item categoria-item">
+                <a href="#" class="link-categoria brand-filter" data-brand="todos">🎵 Todos los productos</a>
+              </li>
+              <li class="list-group-item categoria-item">
+                <a href="#" class="link-categoria brand-filter" data-brand="fender">Fender</a>
+              </li>
+              <li class="list-group-item categoria-item">
+                <a href="#" class="link-categoria brand-filter" data-brand="gibson">Gibson</a>
+              </li>
+              <li class="list-group-item categoria-item">
+                <a href="#" class="link-categoria brand-filter" data-brand="yamaha">Yamaha</a>
+              </li>
+              <li class="list-group-item categoria-item">
+                <a href="#" class="link-categoria brand-filter" data-brand="roland">Roland</a>
+              </li>
+              <li class="list-group-item categoria-item">
+                <a href="#" class="link-categoria brand-filter" data-brand="ibanez">Ibanez</a>
+              </li>
+              <li class="list-group-item categoria-item">
+                <a href="#" class="link-categoria brand-filter" data-brand="prs">PRS</a>
+              </li>
+            </ul>
+
+            <!-- Sección de Disponibilidad -->
+            <h4 class="seccion-titulo">Disponibilidad</h4>
+            <ul class="list-group mb-4">
+              <li class="list-group-item categoria-item">
+                <a href="#" class="availability-filter" data-availability="todos">📦Todos</a>
+                
+              </li>
+              <li class="list-group-item categoria-item">
+                <a href="#" class="availability-filter" data-availability="disponibles">✅Disponibles</a>
+              </li>
+            </ul>
+          </div>
+        </aside>
+
+        
+        <div class="col-md-9">
+          
+          <!-- Título principal -->
+          <h1 class="mb-4">Catálogo de Productos</h1>
+          
+          <!-- Grid de productos -->
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            
+              <!-- Tarjeta 1 - Fender Stratocaster -->
+    <!-- Tarjeta 1 - Fender Stratocaster -->
+  <div class="col" data-category="guitarras" data-brand="fender">
+   <div class="card h-100">
+     <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/fender-stratocaster-54-mark-rogan.jpg" class="card-img-top" alt="Guitarra Fender Stratocaster">
+     <div class="card-body">
+       <h5 class="card-title">Fender Stratocaster 54</h5>
+       <p class="card-text">La icónica guitarra para cualquier estilo musical.</p>
+       <!-- La información de precio y disponibilidad se agregará automáticamente por JavaScript -->
+       <div class="product-info" id="product-info-1">
+         <!-- Precio dinámico -->
+         <div class="price-section"></div>
+         <!-- Estado de disponibilidad -->
+         <div class="availability-section"></div>
+       </div>
+       <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalProducto1">Ver más</button>
+     </div>
+   </div>
+  </div>
+
+  <!-- Tarjeta 2 - Batería Yamaha -->
+  <div class="col" data-category="baterias" data-brand="yamaha">
+   <div class="card h-100">
+     <img src="https://es.yamaha.com/es/files/header_banner_01_bcf215beb7187cfd38534f9b37dc2d67.jpg?impolicy=resize&imwid=2000&imhei=800" class="card-img-top" alt="Batería Yamaha">
+     <div class="card-body">
+       <h5 class="card-title">Batería Yamaha PHX</h5>
+       <p class="card-text">El arte del sonido, sin compromisos.</p>
+       <!-- La información de precio y disponibilidad se agregará automáticamente por JavaScript -->
+       <div class="product-info" id="product-info-2">
+         <!-- Precio dinámico -->
+         <div class="price-section"></div>
+         <!-- Estado de disponibilidad -->
+         <div class="availability-section"></div>
+       </div>
+       <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalProducto2">Ver más</button>
+     </div>
+   </div>
+  </div>
+
+  <!-- Tarjeta 3 - Gibson Les Paul -->
+  <div class="col" data-category="guitarras" data-brand="gibson">
+   <div class="card h-100">
+     <img src="https://imgs.search.brave.com/LoaaSxkYijIK9NCJmGO13BrvJ30VqmDCSP95enCEfvo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9mZW5k/ZXJmZXZlci5jb20v/Y2RuL3Nob3AvZmls/ZXMvMjk5Ml8yLmpw/Zz92PTE3MzI3OTE4/NjMmd2lkdGg9MTQ0/NQ" class="card-img-top" alt="Gibson Les Paul">
+     <div class="card-body">
+       <h5 class="card-title">Les Paul Standard 60s Root Beer</h5>
+       <p class="card-text">Sabor clásico, tono legendario.</p>
+       <!-- La información de precio y disponibilidad se agregará automáticamente por JavaScript -->
+       <div class="product-info" id="product-info-3">
+         <!-- Precio dinámico -->
+         <div class="price-section"></div>
+         <!-- Estado de disponibilidad -->
+         <div class="availability-section"></div>
+       </div>
+       <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalProducto3">Ver más</button>
+     </div>
+   </div>
+  </div>
+
+  <!-- Tarjeta 4 - Batería Roland -->
+  <div class="col" data-category="baterias" data-brand="roland">
+   <div class="card h-100">
+     <img src="https://imgs.search.brave.com/OxmzN4K1R2rJiean-4OqSde0Iq9aIRJllmcsDKSyKzg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/bW9zLmNtcy5mdXR1/cmVjZG4ubmV0L1gy/Slk3bUxhdUwyNmZW/emI0b2FIVEwuanBn" class="card-img-top" alt="Batería Roland">
+     <div class="card-body">
+       <h5 class="card-title">Batería Roland TD716</h5>
+       <p class="card-text">potencia digital con alma acústica.</p>
+       <!-- La información de precio y disponibilidad se agregará automáticamente por JavaScript -->
+       <div class="product-info" id="product-info-4">
+         <!-- Precio dinámico -->
+         <div class="price-section"></div>
+         <!-- Estado de disponibilidad -->
+         <div class="availability-section"></div>
+       </div>
+       <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalProducto4">Ver más</button>
+     </div>
+   </div>
+  </div>
+
+  <!-- Tarjeta 5 - Guitarra Ibanez -->
+  <div class="col" data-category="guitarras" data-brand="ibanez">
+   <div class="card h-100">
+     <img src="https://cdn.pixabay.com/photo/2016/01/08/00/28/ibanez-rg8pb-1126902_1280.jpg" class="card-img-top" alt="Guitarra Ibanez">
+     <div class="card-body">
+       <h5 class="card-title">Ibanez RG RG5121ET</h5>
+       <p class="card-text">Perfecta para metal y rock progresivo.</p>
+       <!-- La información de precio y disponibilidad se agregará automáticamente por JavaScript -->
+       <div class="product-info" id="product-info-5">
+         <!-- Precio dinámico -->
+         <div class="price-section"></div>
+         <!-- Estado de disponibilidad -->
+         <div class="availability-section"></div>
+       </div>
+       <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalProducto5">Ver más</button>
+     </div>
+   </div>
+  </div>
+
+  <!-- Tarjeta 6 - PRS Custom 24 -->
+  <div class="col" data-category="guitarras" data-brand="prs">
+   <div class="card h-100">
+     <img src="https://imgs.search.brave.com/EIVc38wtuPdTQ2I7qGSRzyDD2RRftukEqWn271XZj80/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9oaWVu/ZGd1aXRhci5jb20v/Y2RuL3Nob3AvZmls/ZXMvRFNDMDA2Nzhf/ZWE5MDk2ZjctZjlk/Zi00Yzg1LTkzM2Mt/ZDAzNTJiNGQxMzkw/LmpwZz92PTE3Mzg1/NjA5MDUmd2lkdGg9/MTYxNg" class="card-img-top" alt="Guitarra PRS">
+     <div class="card-body">
+       <h5 class="card-title">PRS Custom 24</h5>
+       <p class="card-text">Donde la elegancia encuentra su voz.</p>
+       <!-- La información de precio y disponibilidad se agregará automáticamente por JavaScript -->
+       <div class="product-info" id="product-info-6">
+         <!-- Precio dinámico -->
+         <div class="price-section"></div>
+         <!-- Estado de disponibilidad -->
+         <div class="availability-section"></div>
+       </div>
+       <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalProducto6">Ver más</button>
+     </div>
+   </div>
+  </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- MODALES -->
+  <!-- Modal Producto 1 - Fender Stratocaster -->
+  <div class="modal fade" id="modalProducto1" tabindex="-1" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title">Fender Stratocaster 54</h5>
+         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+       </div>
+       <div class="modal-body">
+         <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/fender-stratocaster-54-mark-rogan.jpg" alt="Fender Stratocaster" class="img-fluid mb-3">
+         <p>La Fender Stratocaster '54 fue la primera versión comercial de esta icónica guitarra, lanzada en 1954. Tiene cuerpo de fresno, mástil de arce de una pieza, pastillas de bobina simple (single coil) y un diseño innovador con doble cutaway y trémolo. Es famosa por su tono brillante y versatilidad, usada por leyendas como Buddy Holly y Eric Clapton.</p>
+         <!-- El precio, disponibilidad y botón de compra se agregará automáticamente por JavaScript -->
+         <div class="modal-product-info" id="modal-product-info-1">
+           <!-- Precio dinámico -->
+           <div class="modal-price-section"></div>
+           <!-- Estado de disponibilidad -->
+           <div class="modal-availability-section"></div>
+           <!-- Botón de compra -->
+           <div class="modal-purchase-section"></div>
+         </div>
+       </div>
+     </div>
+   </div>
+  </div>
+
+  <!-- Modal Producto 2 - Batería Yamaha -->
+  <div class="modal fade" id="modalProducto2" tabindex="-1" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title">Batería Yamaha</h5>
+         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+       </div>
+       <div class="modal-body">
+         <img src="https://es.yamaha.com/es/files/header_banner_01_bcf215beb7187cfd38534f9b37dc2d67.jpg?impolicy=resize&imwid=2000&imhei=800" alt="Batería Yamaha" class="img-fluid mb-3">
+         <p>La Yamaha PHX (Phoenix) es la batería acústica de gama más alta de Yamaha, lanzada en 2008. Fabricada en Japón, destaca por su construcción híbrida de cascos con maderas como jatoba, kapur y maple, lo que le da un sonido potente, cálido y con gran proyección. Sus bordes están cortados a 30° para mejorar la resonancia según el tipo de tambor. Usa el sistema de montaje Y.E.S.S. II, que permite máxima vibración y sustain. Incluye herrajes premium como aros de aluminio de 3 mm y lugs de bajo contacto. Es una batería profesional, pensada para estudio o escenarios de alto nivel, con acabados artesanales y respuesta dinámica excepcional.</p>
+         <!-- El precio, disponibilidad y botón de compra se agregará automáticamente por JavaScript -->
+         <div class="modal-product-info" id="modal-product-info-2">
+           <!-- Precio dinámico -->
+           <div class="modal-price-section"></div>
+           <!-- Estado de disponibilidad -->
+           <div class="modal-availability-section"></div>
+           <!-- Botón de compra -->
+           <div class="modal-purchase-section"></div>
+         </div>
+       </div>
+     </div>
+   </div>
+  </div>
+
+  <!-- Modal Producto 3 - Gibson Les Paul -->
+  <div class="modal fade" id="modalProducto3" tabindex="-1" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title">Gibson Les Paul</h5>
+         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+       </div>
+       <div class="modal-body">
+         <img src="https://imgs.search.brave.com/LoaaSxkYijIK9NCJmGO13BrvJ30VqmDCSP95enCEfvo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9mZW5k/ZXJmZXZlci5jb20v/Y2RuL3Nob3AvZmls/ZXMvMjk5Ml8yLmpw/Zz92PTE3MzI3OTE4/NjMmd2lkdGg9MTQ0/NQ" alt="Gibson Les Paul" class="img-fluid mb-3">
+         <p>La Gibson Les Paul Standard '60s Root Beer es una guitarra eléctrica de alta gama con acabado marrón translúcido. Presenta cuerpo de caoba con tapa de arce flameado, mástil Slim Taper de los años 60, diapasón de palisandro y pastillas Burstbucker 61 para un tono clásico con pegada moderna. Es ideal para rock, blues y estilos vintage.</p>
+         <!-- El precio, disponibilidad y botón de compra se agregará automáticamente por JavaScript -->
+         <div class="modal-product-info" id="modal-product-info-3">
+           <!-- Precio dinámico -->
+           <div class="modal-price-section"></div>
+           <!-- Estado de disponibilidad -->
+           <div class="modal-availability-section"></div>
+           <!-- Botón de compra -->
+           <div class="modal-purchase-section"></div>
+         </div>
+       </div>
+     </div>
+   </div>
+  </div>
+
+  <!-- Modal Producto 4 - Batería Roland -->
+  <div class="modal fade" id="modalProducto4" tabindex="-1" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title">Batería Roland</h5>
+         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+       </div>
+       <div class="modal-body">
+         <img src="https://imgs.search.brave.com/OxmzN4K1R2rJiean-4OqSde0Iq9aIRJllmcsDKSyKzg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/bW9zLmNtcy5mdXR1/cmVjZG4ubmV0L1gy/Slk3bUxhdUwyNmZW/emI0b2FIVEwuanBn" alt="Batería Roland" class="img-fluid mb-3">
+         <p>La Roland TD-716 es una batería electrónica de gama alta que ofrece una experiencia de toque ultra realista. Incorpora el módulo V-Drums V71 con más de 1,000 sonidos y 200 kits listos para usar, desarrollados en colaboración con Drum Workshop (DW). Sus pads avanzados incluyen una caja PD-140DSX con palanca de apagado, toms PD-10X y PD-12X, bombo KD-18-BK de madera y platillos digitales VH-14D, CY-16R-T y CY-18DR, todos con sensores de alta precisión. Ofrece conectividad Bluetooth, USB multicanal para grabación profesional, efectos integrados y un rack robusto con cableado interno. Es ideal para estudio, directo y práctica silenciosa.</p>
+         <!-- El precio, disponibilidad y botón de compra se agregará automáticamente por JavaScript -->
+         <div class="modal-product-info" id="modal-product-info-4">
+           <!-- Precio dinámico -->
+           <div class="modal-price-section"></div>
+           <!-- Estado de disponibilidad -->
+           <div class="modal-availability-section"></div>
+           <!-- Botón de compra -->
+           <div class="modal-purchase-section"></div>
+         </div>
+       </div>
+     </div>
+   </div>
+  </div>
+
+  <!-- Modal Producto 5 - Ibanez RG -->
+  <div class="modal fade" id="modalProducto5" tabindex="-1" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title">Ibanez RG</h5>
+         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+       </div>
+       <div class="modal-body">
+         <img src="https://cdn.pixabay.com/photo/2016/01/08/00/28/ibanez-rg8pb-1126902_1280.jpg" alt="Ibanez RG" class="img-fluid mb-3">
+         <p>La Ibanez RG5121ET es una guitarra eléctrica de la serie Prestige, fabricada en Japón. Presenta un cuerpo de caoba africana con acabado brillante "Polar Lights", mástil Super Wizard HP de 5 piezas (arce y wenge) y diapasón de ébano Macassar con 24 trastes jumbo de acero inoxidable. Incorpora un puente fijo EverTune, que garantiza una afinación constante en cualquier condición. Equipada con pastillas activas Fishman Fluence Modern (cerámicas) y un selector de voicing para cambiar entre tonos modernos agresivos y limpios detallados. Incluye clavijas Gotoh, cejuela Graph Tech Black TUSQ XL y marcadores Luminlay. Es ideal para músicos que buscan precisión, potencia y estabilidad extrema en una guitarra profesional.</p>
+         <!-- El precio, disponibilidad y botón de compra se agregará automáticamente por JavaScript -->
+         <div class="modal-product-info" id="modal-product-info-5">
+           <!-- Precio dinámico -->
+           <div class="modal-price-section"></div>
+           <!-- Estado de disponibilidad -->
+           <div class="modal-availability-section"></div>
+           <!-- Botón de compra -->
+           <div class="modal-purchase-section"></div>
+         </div>
+       </div>
+     </div>
+   </div>
+  </div>
+
+  <!-- Modal Producto 6 - PRS Custom 24 -->
+  <div class="modal fade" id="modalProducto6" tabindex="-1" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title">PRS Custom 24</h5>
+         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+       </div>
+       <div class="modal-body">
+         <img src="https://imgs.search.brave.com/EIVc38wtuPdTQ2I7qGSRzyDD2RRftukEqWn271XZj80/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9oaWVu/ZGd1aXRhci5jb20v/Y2RuL3Nob3AvZmls/ZXMvRFNDMDA2Nzhf/ZWE5MDk2ZjctZjlk/Zi00Yzg1LTkzM2Mt/ZDAzNTJiNGQxMzkw/LmpwZz92PTE3Mzg1/NjA5MDUmd2lkdGg9/MTYxNg" alt="PRS Custom 24" class="img-fluid mb-3">
+         <p>La PRS Custom 24 es la guitarra insignia de Paul Reed Smith desde su lanzamiento en 1985 y sigue siendo referente de versatilidad y calidad. Está construida con cuerpo de caoba y tapa de maple tallado, mástil atornillado de caoba de 25" y diapasón de palisandro con 24 trastes e inlays de pájaros. Equipada con puente de trémolo Gen III y clavijas PRS Phase III de bloqueo, ofrece excelente estabilidad y sustain. Viene con pastillas 85/15 o DMO diseñadas para ofrecer claridad, rango dinámico amplio y tono pulido, controladas por un selector de 5 posiciones y controles de volumen y tono. De acabado brillante nitro o V12 y construcción impecable, es una guitarra ideal para escenarios, estudio y todo estilo musical.</p>
+         <!-- El precio, disponibilidad y botón de compra se agregará automáticamente por JavaScript -->
+         <div class="modal-product-info" id="modal-product-info-6">
+           <!-- Precio dinámico -->
+           <div class="modal-price-section"></div>
+           <!-- Estado de disponibilidad -->
+           <div class="modal-availability-section"></div>
+           <!-- Botón de compra -->
+           <div class="modal-purchase-section"></div>
+         </div>
+       </div>
+     </div>
+   </div>
+  </div>
+
+  <!-- FOOTER -->
+<footer class="bg-dark text-light text-center p-4">
+    <div class="mb-2">
+      <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="text-light me-3"><i class="bi bi-instagram"></i></a>
+      <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
+    </div>
+    <div class="mb-2">
+      <button type="button" class="btn btn-link text-light p-0 me-3" data-bs-toggle="modal" data-bs-target="#privacyModal">
+        <i class="bi bi-shield-lock"></i> Políticas de Privacidad
+      </button>
+    </div>
+    <small>&copy; 2025 Tienda Musical. Todos los derechos reservados.</small>
+  </footer>
+
+<!-- Modal de Políticas de Privacidad -->
+ <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="privacyModalLabel">
+            <i class="bi bi-shield-lock"></i> Políticas de Privacidad
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="privacy-content">
+            <h6><i class="bi bi-info-circle"></i> Información General</h6>
+            <p>En <strong>Tienda Musical</strong>, valoramos y respetamos tu privacidad. Esta política describe cómo recopilamos, utilizamos y protegemos tu información personal cuando utilizas nuestros servicios.</p>
+            
+            <h6><i class="bi bi-collection"></i> Información que Recopilamos</h6>
+            <ul>
+              <li><strong>Información de contacto:</strong> Nombre, dirección de correo electrónico, número de teléfono</li>
+              <li><strong>Información de navegación:</strong> Páginas visitadas, tiempo de permanencia, preferencias</li>
+              <li><strong>Información de compras:</strong> Historial de pedidos, productos favoritos, métodos de pago</li>
+              <li><strong>Cookies y tecnologías similares:</strong> Para mejorar tu experiencia de usuario</li>
+            </ul>
+
+            <h6><i class="bi bi-gear"></i> Cómo Utilizamos tu Información</h6>
+            <ul>
+              <li>Procesar y gestionar tus pedidos</li>
+              <li>Proporcionar atención al cliente y soporte técnico</li>
+              <li>Enviar comunicaciones sobre productos y ofertas (con tu consentimiento)</li>
+              <li>Mejorar nuestros productos y servicios</li>
+              <li>Cumplir con obligaciones legales y fiscales</li>
+            </ul>
+
+            <h6><i class="bi bi-share"></i> Compartir Información</h6>
+            <p><strong>No vendemos ni alquilamos</strong> tu información personal a terceros. Solo compartimos información cuando:</p>
+            <ul>
+              <li>Es necesario para completar una transacción (proveedores de pago, envío)</li>
+              <li>Lo requiere la ley o autoridades competentes</li>
+              <li>Has dado tu consentimiento explícito</li>
+            </ul>
+
+            <h6><i class="bi bi-shield-check"></i> Seguridad de los Datos</h6>
+            <p>Implementamos medidas de seguridad técnicas y organizativas para proteger tu información:</p>
+            <ul>
+              <li>Encriptación SSL para transmisión de datos</li>
+              <li>Acceso restringido a información personal</li>
+              <li>Actualizaciones regulares de seguridad</li>
+              <li>Capacitación del personal en protección de datos</li>
+            </ul>
+
+            <h6><i class="bi bi-person-check"></i> Tus Derechos</h6>
+            <p>Tienes derecho a:</p>
+            <ul>
+              <li><strong>Acceso:</strong> Solicitar una copia de tu información personal</li>
+              <li><strong>Rectificación:</strong> Corregir información inexacta o incompleta</li>
+              <li><strong>Eliminación:</strong> Solicitar la eliminación de tu información personal</li>
+              <li><strong>Portabilidad:</strong> Transferir tu información a otro proveedor</li>
+              <li><strong>Oposición:</strong> Oponerte al procesamiento de tu información</li>
+            </ul>
+
+            <h6><i class="bi bi-clock"></i> Retención de Datos</h6>
+            <p>Conservamos tu información personal solo durante el tiempo necesario para cumplir con los fines descritos en esta política, o según lo requiera la ley aplicable.</p>
+
+            <h6><i class="bi bi-envelope"></i> Contacto</h6>
+            <p>Si tienes preguntas sobre esta política de privacidad o deseas ejercer tus derechos, contáctanos:</p>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-envelope"></i> Email: privacidad@tiendamusical.com</li>
+              <li><i class="bi bi-telephone"></i> Teléfono: +1 (555) 123-4567</li>
+              <li><i class="bi bi-geo-alt"></i> Dirección: Calle Musical 123, Ciudad</li>
+            </ul>
+
+            <div class="alert alert-info mt-3">
+              <i class="bi bi-calendar"></i> <strong>Última actualización:</strong> Julio 2025
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" onclick="acceptPrivacy()">
+            <i class="bi bi-check-circle"></i> Entiendo
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./JavaScript/JsProductos.js"></script>
+</body>
+</html>
